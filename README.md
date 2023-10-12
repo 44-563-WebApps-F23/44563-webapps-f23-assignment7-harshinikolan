@@ -3,8 +3,8 @@
 An assignment on java script modifying the DOM and using anonymous callback functions.
 Hosted at (https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment7-harshinikolan/settings/pages)
 
-[pirate](file:///C:/Users/S564892/Desktop/Webapps_repo/44563-webapps-f23-assignment7-harshinikolan/pirate.html)
+[pirate](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-harshinikolan/pirate.html)
 
-[react](file:///C:/Users/S564892/Desktop/Webapps_repo/44563-webapps-f23-assignment7-harshinikolan/react.html)
+[react](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-harshinikolan/react.html)
 
-[merger](file:///C:/Users/S564892/Desktop/Webapps_repo/44563-webapps-f23-assignment7-harshinikolan/merger.html)
+[merger](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-harshinikolan/merger.html)
