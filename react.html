@@ -1,45 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>setTimeout use</title>
+  <title>setTimeout</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+    crossorigin="anonymous"
+  />
+  <style>
+.ui.container {
+    margin-top: 54px !important;
+}
+  </style>
 </head>
-
 <body>
+    <div class="ui container">
+  <h1>Harshini Reddy Kolan Speed Check</h1>
 
-    <h2>Harshini Reddy Kolan speed check</h2>
-    <div id="target">Your time</div>
-    <div id="counter">Count</div>
-    <button type="button" class="btn btn-success" onclick="startTime()">Start Timer</button>
-    <button type="button" class="btn btn-warning" onclick="recordTime()">React</button>
+  <div id="target">
+    Your time:
+  </div>
+  <div id="count">
+    Count:
+  </div><br>
 
-    <script>
-        let ReactTime = undefined;
-        function recordTime() {
-            reactTime = Date.now();
-            console.log(reactTime);
-        }
+  <button class="ui green button" id="startButton" onclick="startTime()">
+    <label>Start Timer</label>
+  </button>
 
-        function startTime() {
-            for(let i = 0; i<9; i++) {
-                setTimeout(function () { document.getElementById('counter').innerHTML = i;},(8 - i) * 1000)
-                }
+  <button class="ui green button" id="reactButton" onclick="recordTime()">
+    <label>React</label>
+  </button>
+
+  <div id="countdown"></div>
+</div>
+  
+  <script> 
+     var reactTime = undefined;
+
+function recordTime() 
+{
+    reactTime = Date.now();
+    console.log("React time recorded:", reactTime);
+}
+document.getElementById("reactButton").onclick = recordTime;
+function startTime() {
+    let randomCountDown = Math.round(Math.random() * (10 - 2) + 2)
+    for(let i=0;i<randomCountDown;i++){
                 setTimeout(function () {
-                    if(reactTime == undefined) {
-                        document.getElementById('target').innerHTML = "Too Slow"
-                    }
-                    else {
-                        endTime = Date.now();
-                        elapsedTime = endTime - ReactTime;
-                        document.getElementById('target').innerHTML = "Time was" + elapsedTime;
-                    }
-            },8000)
+                    document.getElementById("count").innerHTML = "Count: " + i;
+                }, (8 - i) * 1000);
+            }
         }
-    </script>
+        setTimeout(function () {
+            if (reactTime === undefined) {
+                document.getElementById("target").innerHTML = "Too Slow";
+            } else {
+                var endTime = Date.now();
+                var elapsed = endTime - reactTime;
+                document.getElementById("target").innerHTML = "Time was " + elapsed + " ms";
+            }
+        }, 8000);
+        document.getElementById("startButton").onclick = startTime;
+  </script>
+
 </body>
 </html>
